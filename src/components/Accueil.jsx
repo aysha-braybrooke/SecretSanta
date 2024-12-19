@@ -1,5 +1,3 @@
-
-
 export function Accueil({ onNext }) {
   return (
     <div className="relative w-full h-screen flex flex-col py-20 ">

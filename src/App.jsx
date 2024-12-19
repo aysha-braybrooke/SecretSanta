@@ -1,11 +1,10 @@
-
+// VISIONNER EN IPHONE 12 PRO POUR FORMAT MOBILE
 
 import { useState } from "react";
 import { WelcomeScreen } from "./components/WelcomeScreen";
 import { Accueil } from "./components/Accueil"; // Import du nouvel écran
 import { ParticipantInput } from "./components/ParticipantInput";
 import { AssignmentDisplay } from "./components/AssignmentDisplay";
-
 export default function App() {
   const [participants, setParticipants] = useState([]);
   const [assignments, setAssignments] = useState([]);
@@ -42,53 +41,89 @@ export default function App() {
   };
 
   return (
-    <div style={{ fontFamily: "'Orelega One', sans-serif" }}>
-      {/* Écran d'accueil */}
-      {currentScreen === "welcome" && (
-        <WelcomeScreen onStart={() => setCurrentScreen("accueil")} />
-      )}
+    <div
+      style={{ fontFamily: "'Orelega One', sans-serif" }}
+      className="overflow-hidden flex items-center justify-center min-h-screen bg-gray-50"
+    >
 
-      {/* Nouvel écran intermédiaire */}
-      {currentScreen === "accueil" && (
-        <Accueil onNext={() => setCurrentScreen("input")} />
-      )}
+      <div className="w-full max-w-md relative">
 
-      {/* Écran d'ajout des participants */}
-      {currentScreen === "input" && (
-        <>
-          
-          <ParticipantInput
-            onAddParticipant={addParticipant}
-            participants={participants}
-            onRemoveParticipant={removeParticipant}
-          />
 
-          {/* SUIVANT ---------------------------- */}
-          <div className="mt-6">
-            <button className="button w-full absolute bottom-10 left-45" onClick={distributeGifts}>
-              <img src="./assets/btn_suivant.png"></img>
-            </button>
-          </div>
-        </>
-      )}
+        {/* ECRAN INTRO ------------------------------------------- */}
+        {currentScreen === "welcome" && (
+          <WelcomeScreen onStart={() => setCurrentScreen("accueil")} />
+        )}
 
-      {/* Écran d'affichage des attributions */}
-      {currentScreen === "assignments" && (
-        <>
-          <h2 className="relative text-4xl mb-6 mt-4 text-center ">
-            Résultats
-          </h2>
-          <AssignmentDisplay assignments={assignments} />
-          <div className="mt-6">
-            <button className="button w-full" onClick={resetApp}>
-            <img src="./assets/btn_recommencer.png" className="absolute scale-80 bottom-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-5"></img>
-            </button>
-          </div>
+        {/* ECRAN ACCUEIL ----------------------------------------- */}
+        {currentScreen === "accueil" && (
+          <Accueil onNext={() => setCurrentScreen("input")} />
+        )}
 
-          <img src="./assets/sapin.png" className="absolute -bottom-30  -right-30 scale-80"></img>
-          <img src="./assets/gift_pile.png" className="absolute bottom-0" ></img>
-        </>
-      )}
+
+
+
+
+        {/* ECRAN INSERER LES PARTICIPANTS ------------------------ */}
+        {currentScreen === "input" && (
+          <>
+            <ParticipantInput
+              onAddParticipant={addParticipant}
+              participants={participants}
+              onRemoveParticipant={removeParticipant}
+            />
+
+            {/* BTN SUIVANT */}
+            <div className="mt-6">
+              <button
+                className="button w-full absolute -bottom-25 left-45 lg:left-32"
+                onClick={distributeGifts}
+              >
+                <img src="./assets/btn_suivant.png" alt="Suivant" />
+              </button>
+            </div>
+          </>
+        )}
+
+
+
+        {/* ECRAN DISTRIBUTIONS DES CADEAUX -----------------------*/}
+        {currentScreen === "assignments" && (
+          <>
+            <div className="lg:transform lg:-translate-y-50">
+
+              <h2 className="relative text-4xl mb-6 mt-4 text-center">
+                Résultats
+              </h2>
+              <AssignmentDisplay assignments={assignments} />
+              <div className="mt-6">
+                <button className="button w-full" onClick={resetApp}>
+                  <img
+                    src="./assets/btn_recommencer.png"
+                    className="absolute scale-80 -bottom-15 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-5"
+                    alt="Recommencer"
+                  />
+                </button>
+              </div>
+
+
+
+              {/* IMG SAPIN */}
+              <img
+                src="./assets/sapin.png"
+                className="absolute -bottom-115 -right-30 scale-80 lg:scale-130 lg:-right-180 lg:-bottom-120"
+                alt="Sapin"
+              />
+
+              {/* IMG CADEAUX */}
+              <img
+                src="./assets/gift_pile.png"
+                className="absolute -bottom-80 lg:-bottom-140 lg:-left-185"
+                alt="Cadeaux"
+              />
+            </div>
+          </>
+        )}
+      </div>
     </div>
-  ); 
+  );
 }
