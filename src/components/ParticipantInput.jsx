@@ -23,7 +23,7 @@ export function ParticipantInput({
   };
 
   return (
-    <div className="space-y-4 p-5 ">
+    <div className="space-y-4 p-5 overflow-hidden w-screen h-screen">
 
       <img src="./assets/fond.png" className="absolute top-0 z-0 scale-150 w-full h-full " alt="background" />
 
@@ -48,20 +48,21 @@ export function ParticipantInput({
 
       <div className="">
       <ul className="relative space-y-2 z-12 px-14">
-        {participants.map((name, index) => (
-          <li key={index} className="list-item ">
-            {name}
-            <div className="space-x-2 border-b-2">
-              <button
-                className="text-red-500 hover:text-red-700 "
-                onClick={() => onRemoveParticipant(index)}
-              >
-                Supprimer
-              </button>
-            </div>
-          </li>
-        ))}
-      </ul>
+  {participants.map((name, index) => (
+    <li key={index} className="flex justify-between items-center px-4 py-2 border-b">
+      {/* Name on the left */}
+      <span className="h-10 flex items-center">{name}</span>
+
+      {/* Button on the right */}
+      <button
+        className="w-10"
+        onClick={() => onRemoveParticipant(index)}
+      >
+        <img src="./assets/btn_moins.png" className="w-10" alt="Minus Button" />
+      </button>
+    </li>
+  ))}
+</ul>
 
       <div className=" absolute z-0 bg-white top-110 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-70 h-130 rounded-b-lg"></div>
 
