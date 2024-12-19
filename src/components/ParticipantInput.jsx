@@ -23,29 +23,37 @@ export function ParticipantInput({
   };
 
   return (
-    <div className="space-y-4">
-      {/* // Champs de saisie pour ajouter un participant */}
-      <div className="flex space-x-2">
+    <div className="space-y-4 p-5 ">
+
+      <img src="./assets/fond.png" className="absolute top-0 z-0 scale-150 w-full h-full " alt="background" />
+
+
+      <h2 className="relative text-4xl mb-6 mt-4 text-center text-white">
+        Ajoutez les <br></br>participants
+      </h2>
+
+      <div className=" relative flex align-middle items-center space-x-2 border-2 rounded-full bg-white h-14 m-0 z-11">
         <input
           type="text"
-          className="input flex-grow"
-          placeholder="Entrez un nom"
+          className="input flex-grow ml-5"
+          placeholder="    Entrez un nom"
           value={currentName}
           onChange={(e) => setCurrentName(e.target.value)}
           onKeyPress={(e) => e.key === "Enter" && addParticipant()}
         />
         <button className="button" onClick={addParticipant}>
-          Ajouter
+          <img src="./assets/btn_plus.png" className="relative scale-70 z-10"></img>
         </button>
       </div>
-      {/* // Liste des participants ajoutés */}
-      <ul className="space-y-2">
+
+      <div className="">
+      <ul className="relative space-y-2 z-12 px-14">
         {participants.map((name, index) => (
-          <li key={index} className="list-item">
+          <li key={index} className="list-item ">
             {name}
-            <div className="space-x-2">
+            <div className="space-x-2 border-b-2">
               <button
-                className="text-red-500 hover:text-red-700"
+                className="text-red-500 hover:text-red-700 "
                 onClick={() => onRemoveParticipant(index)}
               >
                 Supprimer
@@ -54,6 +62,12 @@ export function ParticipantInput({
           </li>
         ))}
       </ul>
+
+      <div className=" absolute z-0 bg-white top-110 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-70 h-130 rounded-b-lg"></div>
+
+      </div>
+
+      <img src="./assets/lutin_neutre.png" className="absolute scale-70 -bottom-40 -left-25"></img>
     </div>
   );
 }

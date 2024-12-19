@@ -1,16 +1,22 @@
-// Ecran d'accueil de l'application
-// Ce composant prend en props une fonction pour démarrer l'application : onStart
+import React, { useState } from "react";
 
 export function WelcomeScreen({ onStart }) {
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const handleStart = () => {
+    setIsTransitioning(true);
+    setTimeout(() => onStart(), 2000); // Wait for 2 seconds before navigating to the next screen
+  };
+
   return (
-    <div className="text-center space-y-6">
-      <h1 className="text-4xl font-bold text-primary">Secret Santa</h1>
-      <p className="text-lg">
-        Bienvenue dans l'application Secret Santa ! Organisez facilement votre
-        échange de cadeaux entre amis ou collègues.
-      </p>
-      <button onClick={onStart} className="button text-lg px-8 py-3">
-        Commencer
+    <div className="relative w-full h-screen flex flex-col items-center justify-end font-orelega overflow-hidden">
+      <img src="./assets/fond.png" className="absolute z-0 scale-150 w-full h-full object-cover" alt="background" />
+      <img src="./assets/sapin.png" className="absolute scale-200 lg:scale-50 lg:bottom-0" alt="sapin" />
+      <img src="./assets/lutin_neutre.png" className="absolute scale-150 -bottom-20 lg:scale-50 lg:-top-100" alt="lutin" />
+
+
+      <button onClick={handleStart} className="relative mb-10">
+        <img src="./assets/btn_commence.png" alt="Commencer" />
       </button>
     </div>
   );
