@@ -14,7 +14,7 @@ export function Accueil({ onNext }) {
         <button
           onClick={onNext}
         >
-          <img src="./assets/btn_organise.png" className="absolute scale-60 -left-15 top-75"></img>
+          <img src="./assets/btn_organise.png" className="absolute scale-60 -left-15 top-75 cursor-pointer"></img>
         </button>
       </div>
 

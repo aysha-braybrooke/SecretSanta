@@ -75,7 +75,7 @@ export default function App() {
             {/* BTN SUIVANT */}
             <div className="mt-6">
               <button
-                className="button w-full absolute -bottom-25 left-45 lg:left-32"
+                className="button w-full absolute -bottom-25 left-45 lg:left-32 cursor-pointer"
                 onClick={distributeGifts}
               >
                 <img src="./assets/btn_suivant.png" alt="Suivant" />
@@ -99,7 +99,7 @@ export default function App() {
                 <button className="button w-full" onClick={resetApp}>
                   <img
                     src="./assets/btn_recommencer.png"
-                    className="absolute scale-80 -bottom-15 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-5"
+                    className="absolute scale-80 -bottom-15 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-5 cursor-pointer"
                     alt="Recommencer"
                   />
                 </button>

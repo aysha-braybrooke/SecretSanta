@@ -62,7 +62,7 @@ export function ParticipantInput({
                 className="w-10"
                 onClick={() => onRemoveParticipant(index)}
               >
-                <img src="./assets/btn_moins.png" className="w-10" alt="Minus Button" />
+                <img src="./assets/btn_moins.png" className="w-10 cursor-pointer" alt="Minus Button" />
               </button>
             </li>
           ))}

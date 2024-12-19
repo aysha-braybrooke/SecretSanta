@@ -32,7 +32,7 @@ export function WelcomeScreen({ onStart }) {
       />
 
       {/* BTN COMMENCER */}
-      <button onClick={handleStart} className="relative mb-10 lg:mb-20">
+      <button onClick={handleStart} className="relative mb-10 lg:mb-20 cursor-pointer">
         <img src="./assets/btn_commence.png" alt="Commencer" />
       </button>
     </div>
