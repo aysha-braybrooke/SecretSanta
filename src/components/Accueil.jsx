@@ -2,7 +2,7 @@ export function Accueil({ onNext }) {
   return (
     <div className="relative w-full h-screen flex flex-col py-20 ">
 
-      <img src="./assets/sapin.png" className="absolute bottom-5 -right-51 scale-190 z-0"></img>
+      <img src="./assets/sapin.png" className="absolute bottom-5 -right-51 scale-190 z-0 lg:-right-70"></img>
       <img src="./assets/pile_gift_out.png" className="absolute -bottom-5 scale-120"></img>
 
       <div className="px-10">

@@ -27,7 +27,7 @@ export function WelcomeScreen({ onStart }) {
       {/* IMAGE LUTIN */}
       <img
         src="./assets/lutin_neutre.png"
-        className="absolute scale-150 -bottom-20 lg:-bottom-0 lg:left-10 lg:scale-200"
+        className="absolute scale-150 -bottom-20 lg:-bottom-0 lg:left-0 lg:scale-200"
         alt="lutin"
       />
 

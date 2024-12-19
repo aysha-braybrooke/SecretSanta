@@ -1,4 +1,4 @@
-// VISIONNER EN IPHONE 12 PRO POUR FORMAT MOBILE
+// VISIONNER EN IPHONE 12 PRO POUR FORMAT MOBILE !!!!!!!!!!!!
 
 import { useState } from "react";
 import { WelcomeScreen } from "./components/WelcomeScreen";
